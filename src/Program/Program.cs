@@ -27,9 +27,21 @@ namespace Program
 
             //PARTE 3
             AgeSumVisitor visitor = new AgeSumVisitor();
-            parent1Node.Accept(visitor);
+            rootNode.Accept(visitor);
 
             Console.WriteLine($"La suma total de las edades es: {visitor.TotalAge}");
+
+            //PARTE 4
+            OldestChildVisitor oldestChildVisitor = new OldestChildVisitor();
+            rootNode.Accept(oldestChildVisitor);
+
+            Console.WriteLine($"La edad del hijo más grande es: {oldestChildVisitor.OldestAge}");
+
+            LongestNameVisitor longestNameVisitor = new LongestNameVisitor();
+            rootNode.Accept(longestNameVisitor);
+
+            Console.WriteLine($"El nombre más largo es: {longestNameVisitor.LongestName}");
+
 
         }
     }
