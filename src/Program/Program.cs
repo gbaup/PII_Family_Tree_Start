@@ -5,6 +5,7 @@ namespace Program
 {
     class Program
     {
+
         static void Main(string[] args)
         {
 
@@ -24,6 +25,11 @@ namespace Program
             child1Node.AddChild(grandchild1Node);
             child2Node.AddChild(grandchild2Node);
 
+            //PARTE 3
+            AgeSumVisitor visitor = new AgeSumVisitor();
+            parent1Node.Accept(visitor);
+
+            Console.WriteLine($"La suma total de las edades es: {visitor.TotalAge}");
 
         }
     }

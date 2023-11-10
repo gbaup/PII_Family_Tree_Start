@@ -27,5 +27,10 @@ namespace Library
         {
             this.children.Add(child);
         }
+
+        public void Accept(IVisitor<T> visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }
